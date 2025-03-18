@@ -1,0 +1,5 @@
+1 entries in records
+Started running calling sequence 0
+d_region                           15 rows	 0.18 seconds	d_region                               	DB_WRITE
+Finished d_region in 1.22 seconds
+Finished running calling sequence 0 in 1.2193339000077685 seconds

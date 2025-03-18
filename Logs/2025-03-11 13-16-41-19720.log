@@ -1,0 +1,15 @@
+1 entries in records
+Started running calling sequence 1
+Traceback (most recent call last):
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\audit.py", line 152, in wrapper
+    source_count, insert_count, update_count = function(*args, **kwargs)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\clicktoch\db.py", line 35, in click_to_ch
+    self._transfer_data(row, database_name, schema_name, table_name)
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\clicktoch\db.py", line 148, in _transfer_data
+    logger.info(f'{row.targettablename.ljust(35)}{row_count:,} rows\t' +
+                   ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Pandas' object has no attribute 'targettablename'
+
+Finished d_region in 0.47 seconds
+Finished running calling sequence 1 in 0.4733958000142593 seconds

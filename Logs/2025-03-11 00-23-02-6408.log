@@ -1,0 +1,51 @@
+1 entries in records
+Started running calling sequence 1
+Traceback (most recent call last):
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.SyntaxError: syntax error at or near "'customer'"
+LINE 1: CALL ods.usp_etlpreprocess 'customer', 'd_customer', 'SLVtoG...
+                                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\audit.py", line 141, in wrapper
+    latestbatchid = audit_start(
+                    ^^^^^^^^^^^^
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\audit.py", line 213, in audit_start
+    result = conn.execute(text(query),params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.SyntaxError) syntax error at or near "'customer'"
+LINE 1: CALL ods.usp_etlpreprocess 'customer', 'd_customer', 'SLVtoG...
+                                   ^
+
+[SQL: CALL ods.usp_etlpreprocess %(sourceid)s, %(targetobject)s, %(dataflowflag)s, %(sourcegroupflag)s, %(source_count)s, %(user_agent)s, %(etl_batch_id)s, NULL]
+[parameters: {'sourceid': 'customer', 'targetobject': 'd_customer', 'dataflowflag': 'SLVtoGLD', 'sourcegroupflag': 0, 'source_count': 0, 'user_agent': 'airflow', 'etl_batch_id': 'gOSAYDWWmiP'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+Finished d_customer in 0.10 seconds
+Finished running calling sequence 1 in 0.09892190000391565 seconds

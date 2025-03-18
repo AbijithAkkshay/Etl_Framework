@@ -1,0 +1,15 @@
+[
+    {
+        "type": "TypeError",
+        "args": [
+            "cannot unpack non-iterable NoneType object"
+        ],
+        "tb": "Traceback (most recent call last):\n  File \"C:\\Users\\Swathi\\Downloads\\Etl_New\\ETL_Framework\\common_utils\\audit.py\", line 152, in wrapper\n    source_count, insert_count, update_count = function(*args, **kwargs)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: cannot unpack non-iterable NoneType object\n",
+        "timestamp": "2025-03-11T08:54:00.160478+00:00",
+        "src": "clicktoch.db.click_to_ch",
+        "obj_type": "Dimension",
+        "sourceid": "region",
+        "target_file": "d_region",
+        "latestbatchid": 281
+    }
+]

@@ -1,0 +1,10 @@
+1 entries in records
+Started running calling sequence 1
+Traceback (most recent call last):
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\audit.py", line 155, in wrapper
+    source_count, insert_count, update_count = function(record, *args, **kwargs)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CallSP.call_sp() takes 2 positional arguments but 3 were given
+
+Finished d_customer in 0.11 seconds
+Finished running calling sequence 1 in 0.10927719999745023 seconds

@@ -1,0 +1,5 @@
+1 entries in records
+Started running calling sequence 0
+d_category                         8 rows	 0.19 seconds	d_category                             	DB_WRITE
+Finished d_category in 0.92 seconds
+Finished running calling sequence 0 in 0.9211538000963628 seconds

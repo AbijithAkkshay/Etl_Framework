@@ -1,0 +1,74 @@
+1 entries in records
+Started running calling sequence 1
+Traceback (most recent call last):
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\audit.py", line 144, in wrapper
+    args and len(args[0]) or 0,
+             ^^^^^^^^^^^^
+TypeError: object of type 'CallSP' has no len()
+
+Error occurred: (psycopg2.errors.SyntaxError) syntax error at or near "'customer'"
+LINE 1: CALL ods.usp_etlerrorinsert 'customer', 'd_customer', 'SLVto...
+                                    ^
+
+[SQL: CALL ods.usp_etlerrorinsert %(sourceid)s, %(targetobject)s, %(dataflowflag)s, %(latestbatchid)s, %(task)s, %(package)s, %(error_id)s, %(error_desc)s, %(error_line)s]
+[parameters: {'sourceid': 'customer', 'targetobject': 'd_customer', 'dataflowflag': 'SLVtoGLD', 'latestbatchid': 216, 'task': 'call_sp', 'package': 'sourcetostaging.silvertogold.db', 'error_id': -1, 'error_desc': 'TypeError: ["object of type \'CallSP\' has no len()"]', 'error_line': 144}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\audit.py", line 144, in wrapper
+    args and len(args[0]) or 0,
+             ^^^^^^^^^^^^
+TypeError: object of type 'CallSP' has no len()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.SyntaxError: syntax error at or near "'customer'"
+LINE 1: CALL ods.usp_etlerrorinsert 'customer', 'd_customer', 'SLVto...
+                                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\silvertogold\__main__.py", line 66, in <module>
+    main(cli_args)
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\silvertogold\__main__.py", line 58, in main
+    sp_caller.call_sp(row)
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\timing.py", line 44, in wrapper
+    output = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\audit.py", line 179, in wrapper
+    audit_error(
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\audit.py", line 259, in audit_error
+    conn.execute(text(query), params)
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.SyntaxError) syntax error at or near "'customer'"
+LINE 1: CALL ods.usp_etlerrorinsert 'customer', 'd_customer', 'SLVto...
+                                    ^
+
+[SQL: CALL ods.usp_etlerrorinsert %(sourceid)s, %(targetobject)s, %(dataflowflag)s, %(latestbatchid)s, %(task)s, %(package)s, %(error_id)s, %(error_desc)s, %(error_line)s]
+[parameters: {'sourceid': 'customer', 'targetobject': 'd_customer', 'dataflowflag': 'SLVtoGLD', 'latestbatchid': 216, 'task': 'call_sp', 'package': 'sourcetostaging.silvertogold.db', 'error_id': -1, 'error_desc': 'TypeError: ["object of type \'CallSP\' has no len()"]', 'error_line': 144}]
+(Background on this error at: https://sqlalche.me/e/20/f405)

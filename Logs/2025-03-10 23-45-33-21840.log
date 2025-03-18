@@ -1,0 +1,29 @@
+1 entries in records
+Started running calling sequence 1
+Traceback (most recent call last):
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\audit.py", line 124, in wrapper
+    record.sourceid,
+    ^^^^^^^^^^^^^^^
+AttributeError: 'CallSP' object has no attribute 'sourceid'
+
+Error occurred: 'CallSP' object has no attribute 'objecttype'
+Traceback (most recent call last):
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\audit.py", line 124, in wrapper
+    record.sourceid,
+    ^^^^^^^^^^^^^^^
+AttributeError: 'CallSP' object has no attribute 'sourceid'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\silvertogold\__main__.py", line 68, in <module>
+    main(cli_args)
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\silvertogold\__main__.py", line 60, in main
+    sp_caller.call_sp(row)
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\timing.py", line 44, in wrapper
+    output = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\audit.py", line 156, in wrapper
+    obj_type=record.objecttype,
+             ^^^^^^^^^^^^^^^^^
+AttributeError: 'CallSP' object has no attribute 'objecttype'

@@ -1,0 +1,44 @@
+1 entries in records
+Started running calling sequence 1
+d_region                           15 rows	 0.17 seconds	d_region                               	DB_WRITE
+Traceback (most recent call last):
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.ProgrammingError: can't adapt type 'Row'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\audit.py", line 155, in wrapper
+    audit_end(
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\audit.py", line 236, in audit_end
+    conn.execute(text(query), params)
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) can't adapt type 'Row'
+[SQL: CALL ods.usp_etlpostprocess (%(sourceid)s, %(targetobject)s, %(dataflowflag)s, %(sourcegroupflag)s, %(latestbatchid)s, %(source_count)s, %(insert_count)s, %(update_count)s)]
+[parameters: {'sourceid': 'region', 'targetobject': 'd_region', 'dataflowflag': 'GLDtoCH', 'sourcegroupflag': 0, 'latestbatchid': 285, 'source_count': (15,), 'insert_count': 15, 'update_count': 0}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+Finished d_region in 0.49 seconds
+Finished running calling sequence 1 in 0.49374649999663234 seconds

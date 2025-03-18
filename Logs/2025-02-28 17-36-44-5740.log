@@ -1,0 +1,15 @@
+1 entries in records
+Started running calling sequence 0
+Table onesource.d_country does not exist in ClickHouse
+CREATE TABLE onesource.d_country (
+    countrykey Int64,
+    country_id Nullable(Int32),
+    country_name Nullable(String),
+    created_date Nullable(DateTime64),
+    etlactiveind Nullable(Int32),
+    etljobname Nullable(String),
+    envsourcecd Nullable(String),
+    datasourcecd Nullable(String),
+    etlcreateddatetime Nullable(DateTime64),
+    etlupdateddatetime Nullable(DateTime64)) ENGINE = MergeTree ORDER BY tuple(countrykey);
+Created table onesource.d_country in ClickHouse

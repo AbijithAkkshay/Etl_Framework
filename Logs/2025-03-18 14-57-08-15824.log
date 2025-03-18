@@ -1,0 +1,115 @@
+Error occurred: (psycopg2.errors.UndefinedTable) relation "ods.controlheader" does not exist
+LINE 24:             FROM ods.controlheader header
+                          ^
+
+[SQL: 
+            SELECT
+                header.sourceid,
+                detail.sourcename,
+                detail.sourcetype,
+                detail.sourceobject,
+                detail.sourceschema,
+                header.depsource,
+                detail.loadtype,
+                detail.loadfrequency,
+                header.connectionstr,
+                header.objecttype,
+                header.sourcedelimiter,
+                detail.sourcequery,
+                detail.etllastrundate,
+                detail.targetname,
+                detail.targetobject,
+                header.sourcecallingseq,
+                detail.dataflowflag,
+                detail.latestbatchid,
+                detail.targetschemaname,
+                detail.targetprocedurename,
+                detail.intervaldays
+            FROM ods.controlheader header
+            JOIN ods.controldetail detail
+                ON header.SourceId = detail.SourceId
+            WHERE detail.DataflowFlag IN %(dataflowflag)s
+            AND detail.IsReadyForExecution = 1
+            AND detail.Isapplicable = 1
+	AND detail.SourceId IN (%(source0)s)
+	ORDER BY header.Id]
+[parameters: {'dataflowflag': ('SLVtoGLD',), 'source0': 'customer'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedTable: relation "ods.controlheader" does not exist
+LINE 24:             FROM ods.controlheader header
+                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\silvertogold\__main__.py", line 66, in <module>
+    main(cli_args)
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\silvertogold\__main__.py", line 15, in main
+    records = onesource.get_control_entries(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\onesource.py", line 23, in get_control_entries
+    result = conn.execute(text(query), params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Swathi\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "ods.controlheader" does not exist
+LINE 24:             FROM ods.controlheader header
+                          ^
+
+[SQL: 
+            SELECT
+                header.sourceid,
+                detail.sourcename,
+                detail.sourcetype,
+                detail.sourceobject,
+                detail.sourceschema,
+                header.depsource,
+                detail.loadtype,
+                detail.loadfrequency,
+                header.connectionstr,
+                header.objecttype,
+                header.sourcedelimiter,
+                detail.sourcequery,
+                detail.etllastrundate,
+                detail.targetname,
+                detail.targetobject,
+                header.sourcecallingseq,
+                detail.dataflowflag,
+                detail.latestbatchid,
+                detail.targetschemaname,
+                detail.targetprocedurename,
+                detail.intervaldays
+            FROM ods.controlheader header
+            JOIN ods.controldetail detail
+                ON header.SourceId = detail.SourceId
+            WHERE detail.DataflowFlag IN %(dataflowflag)s
+            AND detail.IsReadyForExecution = 1
+            AND detail.Isapplicable = 1
+	AND detail.SourceId IN (%(source0)s)
+	ORDER BY header.Id]
+[parameters: {'dataflowflag': ('SLVtoGLD',), 'source0': 'customer'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)

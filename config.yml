@@ -1,0 +1,31 @@
+postgresql:  # PostgreSQL connection
+  dialect: postgresql
+  driver: psycopg2
+  connection:
+    host: localhost
+    port: 5432
+    database: New_DB
+    # database: examplewh
+    username: postgres
+    password: postgre@123
+    # password: sql
+
+clickhouse-http:  # HTTP port for SQLAlchemy connection
+  dialect: clickhouse
+  driver: clickhouse+http
+  connection:
+    host: localhost
+    port: 8123
+    database: default
+    username: myuser
+    password: mypassword
+
+clickhouse-tcp:  # TCP port for clickhouse_driver
+  dialect: clickhouse
+  driver: clickhouse+native
+  connection:
+    host: localhost
+    port: 9000
+    database: default
+    username: myuser
+    password: mypassword

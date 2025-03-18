@@ -1,0 +1,15 @@
+[
+    {
+        "type": "AttributeError",
+        "args": [
+            "'Pandas' object has no attribute 'encrypted_columns'"
+        ],
+        "tb": "Traceback (most recent call last):\n  File \"C:\\Users\\Swathi\\Downloads\\Etl_New\\ETL_Framework\\common_utils\\audit.py\", line 152, in wrapper\n    source_count, insert_count, update_count = function(*args, **kwargs)\n                                               ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Swathi\\Downloads\\Etl_New\\ETL_Framework\\clicktoch\\db.py\", line 32, in click_to_ch\n    if row.encrypted_columns:\n       ^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'Pandas' object has no attribute 'encrypted_columns'\n",
+        "timestamp": "2025-03-11T07:44:26.802123+00:00",
+        "src": "clicktoch.db.click_to_ch",
+        "obj_type": "Dimension",
+        "sourceid": "region",
+        "target_file": "d_region",
+        "latestbatchid": 279
+    }
+]

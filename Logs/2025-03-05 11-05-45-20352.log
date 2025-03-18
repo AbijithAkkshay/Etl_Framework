@@ -1,0 +1,5 @@
+1 entries in records
+Started running calling sequence 0
+d_category                         0 rows	 0.17 seconds	d_category                             	DB_WRITE
+Finished UnknownTable in 0.89 seconds
+Finished running calling sequence 0 in 0.8895203999709338 seconds

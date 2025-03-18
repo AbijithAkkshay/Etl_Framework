@@ -1,0 +1,11 @@
+1 entries in records
+Started running calling sequence 1
+Executing: EXEC click.usp_d_category;
+Error executing stored procedure usp_d_category: (psycopg2.errors.SyntaxError) syntax error at or near "EXEC"
+LINE 1: EXEC click.usp_d_category;
+        ^
+
+[SQL: EXEC click.usp_d_category;]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Finished d_category in 0.08 seconds
+Finished running calling sequence 1 in 0.08483949999936158 seconds

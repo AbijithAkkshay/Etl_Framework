@@ -1,0 +1,20 @@
+2 entries in records
+Started running calling sequence 0
+d_category                         8 rows	 0.19 seconds	d_category                             	DB_WRITE
+Finished d_category in 0.94 seconds
+Finished running calling sequence 0 in 0.9402651999844238 seconds
+Started running calling sequence 1
+Table onesource.f_invoice_summary does not exist in ClickHouse
+CREATE TABLE onesource.f_invoice_summary (
+    invoicekey Int64,
+    customer_name Nullable(String),
+    entity_name Nullable(String),
+    region_name Nullable(String),
+    division_name Nullable(String),
+    country_name Nullable(String),
+    totalinvoiceamount Nullable(Decimal(25,2)),
+    createdatetime Nullable(DateTime64)) ENGINE = MergeTree ORDER BY tuple(invoicekey);
+Created table onesource.f_invoice_summary in ClickHouse
+f_invoice_summary                  1,887 rows	 0.23 seconds	f_invoice_summary                      	DB_WRITE
+Finished f_invoice_summary in 0.99 seconds
+Finished running calling sequence 1 in 0.9952962999232113 seconds

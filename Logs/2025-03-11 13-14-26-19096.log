@@ -1,0 +1,13 @@
+1 entries in records
+Started running calling sequence 1
+Traceback (most recent call last):
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\audit.py", line 152, in wrapper
+    source_count, insert_count, update_count = function(*args, **kwargs)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\clicktoch\db.py", line 32, in click_to_ch
+    if row.encrypted_columns:
+       ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Pandas' object has no attribute 'encrypted_columns'
+
+Finished d_region in 0.44 seconds
+Finished running calling sequence 1 in 0.44015959999524057 seconds

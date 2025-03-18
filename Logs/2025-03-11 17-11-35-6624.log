@@ -1,0 +1,18 @@
+1 entries in records
+Started running calling sequence 1
+Table onesource.d_region does not exist in ClickHouse
+CREATE TABLE onesource.d_region (
+    regionkey Int64,
+    region_id Nullable(Int32),
+    region_name Nullable(String),
+    created_date Nullable(DateTime64),
+    etlactiveind Nullable(Int32),
+    etljobname Nullable(String),
+    envsourcecd Nullable(String),
+    datasourcecd Nullable(String),
+    etlcreateddatetime Nullable(DateTime64),
+    etlupdateddatetime Nullable(DateTime64)) ENGINE = MergeTree ORDER BY tuple(regionkey);
+Created table onesource.d_region in ClickHouse
+d_region                           15 rows	 0.23 seconds	d_region                               	DB_WRITE
+Finished d_region in 0.94 seconds
+Finished running calling sequence 1 in 0.9397483000066131 seconds

@@ -1,0 +1,6 @@
+1 entries in records
+Started running calling sequence 1
+Executing: CALL click.usp_d_customer(:source_count, :update_count, :insert_count);
+SP Executed: usp_d_customer - Source Count: 148, Update Count: 148, Insert Count: 0
+Finished d_customer in 0.10 seconds
+Finished running calling sequence 1 in 0.09852959999989253 seconds

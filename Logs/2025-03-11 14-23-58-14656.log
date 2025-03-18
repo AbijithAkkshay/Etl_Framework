@@ -1,0 +1,11 @@
+1 entries in records
+Started running calling sequence 1
+d_region                           15 rows	 0.17 seconds	d_region                               	DB_WRITE
+Traceback (most recent call last):
+  File "C:\Users\Swathi\Downloads\Etl_New\ETL_Framework\common_utils\audit.py", line 152, in wrapper
+    source_count, insert_count, update_count = function(*args, **kwargs)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+
+Finished d_region in 1.07 seconds
+Finished running calling sequence 1 in 1.07329000000027 seconds

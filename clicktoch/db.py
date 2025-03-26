@@ -22,7 +22,7 @@ class ClickToCH:
         table_name = row.targetobject
         schema_name = row.sourceschema
         database_name = row.targetname
-
+        # print(table_name,schema_name,database_name)
         incnt, upcnt, srcnt = 0, 0, 0
 
         with self.engine_postgres.connect() as con:
@@ -56,6 +56,7 @@ class ClickToCH:
         params = {'target_database': database_name, 'source_schema': schema_name, 'source_table': table_name}
         with self.engine_postgres.connect() as conn:
             result = conn.execute(text(query), params)
+            # print(result)
             create_table_query = result.first()[0]
         
         logger.info(create_table_query)

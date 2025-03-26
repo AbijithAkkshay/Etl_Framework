@@ -41,7 +41,8 @@ def main(args):
 
     if args.list_sources:
         for record in records:
-            logger.info(f"{record.sourceschema}.{record.targettablename}")
+            # logger.info(f"{record.sourceschema}.{record.targettablename}")
+            logger.info(f"{record.sourceschema}.{record.targetobject}")
         sys.exit(0)
     
     for i in df.sourcecallingseq.sort_values().unique():

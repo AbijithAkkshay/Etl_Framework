@@ -16,8 +16,8 @@ class ControlEntries:
         query = self._control_table_query(sources, groups, exclude_sources, exclude_groups, object_type, calling_sequence, load_frequency, failed_only)
         params = self._build_query_params(dataflowflag, sources, groups, exclude_sources, exclude_groups, object_type, calling_sequence, load_frequency)
         
-        print(query)
-        print(params)
+        # print(query)
+        # print(params)
 
         with self.engine.connect() as conn:
             result = conn.execute(text(query), params)

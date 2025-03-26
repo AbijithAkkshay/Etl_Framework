@@ -1,6 +1,7 @@
 # common/audit.py
 import random
 import string
+import time
 from sqlalchemy import text
 import functools
 import connection
@@ -79,7 +80,7 @@ def auditable(function):
                 record.dataflowflag,
                 record.latestbatchid,
                 function.__name__,
-                f'sourcetostaging.{function.__module__}',
+                f'{function.__module__}',
                 -1,
                 '{type}: {args}'.format(**err_info),
                 exc.__traceback__.tb_lineno,
@@ -101,7 +102,7 @@ def audit_start(sourceid, targetobject, dataflowflag, source_count, user_agent, 
         'user_agent': user_agent, 
         'etl_batch_id': etl_batch_id
         }
-        
+      
    
     with engine.begin() as conn:
         result = conn.execute(text(query),params)
@@ -133,7 +134,7 @@ def audit_end(sourceid, targetobject, dataflowflag, latestbatchid, source_count,
         conn.execute(text(query), params)
         conn.commit()
 
-# @logs.handle_error
+@logs.handle_error
 def audit_error(sourceid, targetobject, dataflowflag, latestbatchid, task, package, error_id, error_desc, error_line):
     #engine = connections.new_db_connection('source1')
     engine = connection.new_db_connection('postgresql')
@@ -152,6 +153,7 @@ def audit_error(sourceid, targetobject, dataflowflag, latestbatchid, task, packa
     with engine.begin() as conn:
         #with conn.begin():
         conn.execute(text(query), params)
+        conn.commit()
         conn.close() 
 		
 
